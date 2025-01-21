@@ -8,33 +8,33 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins",san-serif;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 p {
   color: rgb(85, 85, 85);
 }
 
-/* TRANSITION */
+
 
 a,
 .btn {
-  transition: all 300ms ease;
+  transition: margin-right 2s ease-in-out .5s;
 }
 
 /* DESKTOP NAV */
 
 nav,
 .nav-links {
-  display: flex;
+  display:flex;
 }
 
 nav {
-  justify-content: space-around;
+  justify-content:space-around;
   align-items: center;
   height: 17vh;
 }
