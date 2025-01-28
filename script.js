@@ -21,6 +21,19 @@ darkModeToggle.addEventListener("click", () => {
 
 
 
+const darkModeToggleMobile = document.getElementById("dark-mode-toggle-mobile");
+
+darkModeToggleMobile.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark-mode");
+
+ 
+  const isDarkModeEnabled = document.body.classList.contains("dark-mode");
+  localStorage.setItem("dark-mode", isDarkModeEnabled);
+});
+
+
+
 
 
 
