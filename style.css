@@ -149,7 +149,7 @@ a:hover {
   background-color: var(--background-color);
   width: 70%;
   height: 100%;
-  display: flex;
+  display:block;
   flex-direction: column;
   padding: 1rem;
   gap: 1.5rem;
