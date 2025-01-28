@@ -1,6 +1,20 @@
 /* GENERAL */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --nav-background: #f8f9fa;
+  --nav-text-color: #f8f9fa;
+  --card-background: #ffffff;
+  --button-background: #333333;
+  --link-hover-color: #555555;
+
+  
+}
+
+
+
 
 * {
   margin: 0;
@@ -9,6 +23,36 @@
 
 body {
   font-family: "Poppins",san-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  --background-color: #181818;
+  --text-color: #e0e0e0;
+  --nav-background: #242424;
+  --nav-text-color: #e0e0e0;
+  --card-background: #242424;
+  --button-background: #444444;
+  --button-text-color: #e0e0e0;
+  --link-hover-color: #777777;
+
+
+  
+}
+
+.dark-mode .btn {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.dark-mode .menu-links {
+  background-color: #333333;
+}
+
+.dark-mode .icon {
+  filter: invert(1);
 }
 
 html {
@@ -23,6 +67,7 @@ p {
 
 a,
 .btn {
+  color: var(--button-text-color);
   transition: margin-right 2s ease-in-out .5s;
 }
 
@@ -37,6 +82,7 @@ nav {
   justify-content:space-around;
   align-items: center;
   height: 17vh;
+  
 }
 
 .nav-links {
@@ -68,6 +114,9 @@ a:hover {
 
 /* HAMBURGER MENU */
 
+
+
+
 #hamburger-nav {
   display: none;
 }
@@ -94,14 +143,17 @@ a:hover {
 }
 
 .menu-links {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  background-color: var(--background-color);
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1.5rem;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .menu-links a {
@@ -112,6 +164,7 @@ a:hover {
   color: black;
   text-decoration: none;
   transition: all 0.3 ease-in-out;
+ 
 }
 
 .menu-links li {
@@ -120,6 +173,7 @@ a:hover {
 
 .menu-links.open {
   max-height: 300px;
+  transform: translateX(0);
 }
 
 .hamburger-icon.open span:first-child {
@@ -419,6 +473,80 @@ article .icon {
 .email-icon {
   height: 2.5rem;
 }
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 400px; /* Limit width for compactness */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+form input,
+form textarea {
+  padding: 0.6rem; /* Reduce padding */
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  align-self: flex-end;
+  padding: 0.5rem 1rem; /* Compact button */
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* Dark Mode Styles for Form */
+body.dark-mode form {
+  background-color: #333;
+  border-color: #444;
+}
+
+body.dark-mode form label,
+body.dark-mode form input,
+body.dark-mode form textarea {
+  color: #f9f9f9;
+  border-color: #555;
+  background-color: #444;
+}
+
+body.dark-mode form button {
+  background-color: #555;
+  color: white;
+}
+
+body.dark-mode form button:hover {
+  background-color: #777;
+}
+
+
+
+
 
 /* FOOTER SECTION */
 

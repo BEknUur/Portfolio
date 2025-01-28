@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333333;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #333333;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .theme-toggle {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Переключить тему</button>
+    
+    <div class="content">
+        <h1>Пример темной темы</h1>
+        <p>Это текст, который будет менять цвет при переключении темы.</p>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Проверяем сохраненную тему при загрузке страницы
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</body>
+</html>
