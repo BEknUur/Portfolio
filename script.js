@@ -12,13 +12,16 @@ if (isDarkMode) {
   document.body.classList.add("dark-mode");
 }
 
-
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 
   const isDarkModeEnabled = document.body.classList.contains("dark-mode");
   localStorage.setItem("dark-mode", isDarkModeEnabled);
 });
+
+
+
+
 
 
 const menuLinks = document.querySelectorAll(".menu-links a");
