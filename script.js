@@ -1,3 +1,4 @@
+//Beknuuur krashhh
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -32,11 +33,6 @@ darkModeToggleMobile.addEventListener("click", () => {
   localStorage.setItem("dark-mode", isDarkModeEnabled);
 });
 
-
-
-
-
-
 const menuLinks = document.querySelectorAll(".menu-links a");
 menuLinks.forEach((link) =>
   link.addEventListener("click", () => {
@@ -49,4 +45,31 @@ document.getElementById("contact-form").addEventListener("submit", (e) => {
   e.preventDefault(); 
   alert("Your message has been sent successfully!");
   document.getElementById("contact-form").reset();
+});
+
+//shit happens
+let touchStartX = null;
+
+function closeMenu() {
+  menuLinks.classList.remove("open");
+  document.querySelector(".hamburger-icon").classList.remove("open");
+}
+menuLinks.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+menuLinks.addEventListener("touchmove", (e) => {
+  if (!touchStartX) return; 
+
+  let currentX = e.touches[0].clientX;
+  let diffX = currentX - touchStartX;
+
+
+  if (diffX > 50) {
+    closeMenu();
+    touchStartX = null; 
+  }
+});
+
+menuLinks.addEventListener("touchend", () => {
+  touchStartX = null;
 });
