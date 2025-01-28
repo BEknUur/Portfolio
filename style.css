@@ -168,6 +168,21 @@ a:hover {
   z-index: 999;            
 }
 
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;           
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); 
+  display: none;         
+  z-index: 998;          
+}
+.menu-overlay.open {
+  display: block;  
+}
+
+
 
 .menu-links.open {
   transform: translateX(0);
@@ -178,6 +193,7 @@ a:hover {
   list-style: none;
   margin: 0.5rem 0;
 }
+
 
 
 
